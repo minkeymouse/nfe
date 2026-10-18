@@ -1,0 +1,50 @@
+[project]
+name = "nfe"
+version = "0.3.0"
+description = "Neural Filter Estimator: amortized, calibrated posteriors over the latent state of mean-reverting spreads"
+readme = "README.md"
+authors = [{ name = "Minkey Chang" }]
+license = { text = "MIT" }
+requires-python = ">=3.11"
+keywords = ["amortized inference", "neural posterior estimation", "filtering",
+            "statistical arbitrage", "mean reversion", "calibration"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering",
+]
+# The package itself needs only numpy and torch.
+dependencies = [
+    "numpy>=2.0",
+    "torch>=2.4",
+]
+
+[project.urls]
+Repository = "https://github.com/minkeymouse/nfe"
+Paper = "https://doi.org/10.1145/3858063.3858894"
+
+[project.optional-dependencies]
+# NFE.from_pretrained("<hub repo id>")
+hub = ["huggingface_hub>=0.24"]
+# experiments/ and the figure scripts
+experiments = [
+    "scipy>=1.13",
+    "pandas>=2.2",
+    "pyarrow>=16",
+    "matplotlib>=3.9",
+    "scikit-learn>=1.5",
+    "dfm-python>=0.7.0",
+]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["nfe"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
