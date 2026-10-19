@@ -38,7 +38,7 @@ from .panel import (PanelNFE, RowColumnBlock, build_panel_nfe,
                     panel_simulate, panel_featurize, panel_mdn_nll,
                     panel_mdn_pit)
 
-__version__ = "0.3.0"
+__version__ = "0.3.1"
 
 __all__ = [
     "__version__",

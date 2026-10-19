@@ -1,6 +1,6 @@
 [project]
 name = "nfe"
-version = "0.3.0"
+version = "0.3.1"
 description = "Neural Filter Estimator: amortized, calibrated posteriors over the latent state of mean-reverting spreads"
 readme = "README.md"
 authors = [{ name = "Minkey Chang" }]

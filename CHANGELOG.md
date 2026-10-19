@@ -1,6 +1,11 @@
 # Changelog
 
-## Unreleased
+## 0.3.1
+
+Public release of the repository alongside the paper.
+
+- `CITATION.cff` added; docstrings no longer refer to internal substrate
+  names or working notes.
 
 - `dfm-python` (the Attention Factor Model and PCA baselines) is an ordinary
   dependency in the `experiments` extra (PyPI, `>=0.7.0`) instead of a git

@@ -7,7 +7,7 @@ before the first full run. Design decision: the attention implementation
 belongs to THIS paper; the ICLR follow-up generalizes beyond finance.
 
 LINEAGE. FF3 -> DFM -> AFM -> TabFM -> NFE. A factor model compresses a
-day's cross-section into a few numbers; TabFM (external/tabfm) does the
+day's cross-section into a few numbers; TabFM does the
 same with attention, so its row embedding IS the generalized factor. What
 it lacks for a financial panel is dynamics: its ICL stage attends over
 compressed rows as an EXCHANGEABLE set (no position encoding on the row

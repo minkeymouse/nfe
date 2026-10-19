@@ -6,7 +6,8 @@
 where the switching-OU DGP is true. REAL_LADDER.md showed the mechanism does
 not transfer, and the G4 gate already said why -- a classifier separates
 simulated OU windows from real residual windows at AUC 0.884 (KF) / 0.963
-(crypto), far above the 0.75 pass bar. an earlier ladder script (since removed) localized the driver:
+(crypto), far above the 0.75 pass bar. An earlier ladder script (no longer in the
+repository) localized the driver:
 KURTOSIS (per-feature AUC 0.851). So the Gaussian switching OU is the wrong
 process, and this script asks which process is less wrong.
 

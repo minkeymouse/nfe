@@ -4,7 +4,7 @@
 
 [exploration] (2026-07-23). PRE-REGISTRATION — frozen before the first full run.
 
-REDEFINITION (user direction). The regime is no longer fast-vs-slow reversion
+REDEFINITION. The regime is no longer fast-vs-slow reversion
 (a speed contrast the measured ceiling caps at 0.65) but the SIGN of the
 deviation dynamics: does u return to the anchor (C) or trend away (D)?
 Measured grounds: anchor KNOWN gives 0.80-0.90 sign detection, anchor

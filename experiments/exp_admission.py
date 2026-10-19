@@ -24,12 +24,13 @@ CONTROLS, identical pipeline, both required before the statistic is read:
               regime. Tells us what the instrument reads when there IS something.
 
 RESIDUAL CONSTRUCTIONS. demean (cross-sectional) and PCA-3 (rolling 252d,
-causal). The Fama-French arm is gone with the KF-49 substrate (design decision
-2026-07-22), so the ladder is two constructions, not three.
+causal). The Fama-French arm was dropped with the earlier industry-portfolio
+substrate (design decision 2026-07-22), so the ladder is two constructions,
+not three.
 
 SUBSTRATES. KRX daily (120 names, complete 2010-2026) and Binance daily (45
-names, 2021-2026). Each is also split into halves, because the earlier KF-49
-result was era-dependent and a substrate that is admitted in only one era must
+names, 2021-2026). Each is also split into halves, because the earlier
+substrate's result was era-dependent and a substrate that is admitted in only one era must
 not be reported as admitted.
 
 GATE. Admitted if (real - null) exceeds 2 SE of the null draw spread combined

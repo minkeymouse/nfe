@@ -2,10 +2,9 @@
 
     uv run python experiments/exp_e3_book.py [--smoke] [--nfe] [--afm]
 
-[exploration] (registered 2026-07-22; docstring brought current 2026-07-23,
-the original text having described the KF-49 substrate, since retired.
-The hypotheses/gates below are the ones actually run, on KRX; history in
-results/run_260722/E3_BOOK.md.)
+[exploration] (registered 2026-07-22; docstring brought current 2026-07-23
+for the KRX substrate, which replaced an earlier industry-portfolio
+substrate. The hypotheses/gates below are the ones actually run.)
 
 SUBSTRATE. KRX daily, 120 single names (top-200 by median traded value,
 unbroken 2010-2026, 4,072 days), split into two eras at 2018-04. Both
@@ -54,7 +53,7 @@ AMENDMENTS (dated)
   2026-07-23c  AFM's ingested characteristic set chosen by its own
                validation on the train slice (select_fund_set); era2
                declines the fundamentals -> returns-only configuration.
-  2026-07-24   TABLE-AS-LINEAGE (user): one arm per generation. FF3 =
+  2026-07-24   TABLE-AS-LINEAGE: one arm per generation. FF3 =
                characteristic residuals from a daily cross-sectional
                regression on [1, size, bp] (size NOT offered to AFM),
                base rule. Table 1's NFE = AFM's learned factors under
@@ -101,8 +100,9 @@ NBOOT = 2000
 
 
 # ------------------------------------------------------------------ data
-SUBSTRATE = "krx"      # single substrate (decision 2026-07-22): KF-49
-                       # and Binance both dropped; KRX is the only panel the
+SUBSTRATE = "krx"      # single substrate (decision 2026-07-22): the earlier
+                       # industry-portfolio substrate and Binance were both
+                       # dropped; KRX is the only panel the
                        # admission test admits, and the negative control moves
                        # from a rejected SUBSTRATE to a rejected CONSTRUCTION.
 
@@ -162,7 +162,7 @@ def r_pca(R, RF, win=PCAWIN, k=K):
     Names with EXACTLY zero variance inside the window (a halted or
     limit-locked single name; 5 such windows in the KRX panel) make
     np.corrcoef produce NaN and lstsq fail. Industry portfolios never freeze,
-    so KF-49 never triggered this. Degenerate names are excluded from the
+    so the earlier substrate never triggered this. Degenerate names are excluded from the
     factor estimation for that window and carry a demeaned residual."""
     out = np.full_like(R, np.nan)
     for t in range(win, len(R)):
@@ -398,8 +398,7 @@ def main():
     FUND = load_fundamentals(dates)
     yrs = (dates[-1] - dates[0]).days / 365.25
     ann = np.sqrt(len(R) / yrs)
-    mid = len(R) // 2          # KF-49's fixed 2008 split is gone with KF-49;
-                               # each substrate is halved into two eras instead
+    mid = len(R) // 2          # each substrate is halved into two eras
     print(f"[{'smoke' if SMOKE else 'exploration'}] E3 book — {SUBSTRATE} daily")
     print(f"  {len(R)} days x {R.shape[1]} industries "
           f"{dates[0].date()}..{dates[-1].date()} | ann sqrt({len(R)/yrs:.0f})")

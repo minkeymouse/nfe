@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper below."
+title: "nfe: the Neural Filter Estimator"
+type: software
+authors:
+  - family-names: Chang
+    given-names: Minkey
+    orcid: "https://orcid.org/0009-0001-8175-2583"
+repository-code: "https://github.com/minkeymouse/nfe"
+license: MIT
+version: 0.3.1
+preferred-citation:
+  type: conference-paper
+  title: "Amortized Neural Filtering for Calibrated Posteriors in Statistical Arbitrage"
+  authors:
+    - family-names: Chang
+      given-names: Minkey
+  collection-title: "7th ACM International Conference on AI in Finance (ICAIF '26)"
+  year: 2026
+  publisher:
+    name: ACM
+  doi: "10.1145/3858063.3858894"
